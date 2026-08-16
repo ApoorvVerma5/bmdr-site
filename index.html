@@ -8,99 +8,199 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
 
-<header class="site">
-  <a class="brand" href="./">Bulk Media Downloader + Renamer</a>
-  <nav class="site">
-    <a href="./">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-    <a href="refund.html">Refunds</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+<header class="topbar">
+  <div class="bar">
+    <a class="brand" href="./">
+      <svg class="mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="1" y="1" width="6" height="6" rx="1"/>
+        <rect x="9" y="1" width="6" height="6" rx="1"/>
+        <rect x="17" y="1" width="6" height="6" rx="1"/>
+        <rect x="1" y="9" width="6" height="6" rx="1"/>
+        <rect x="9" y="9" width="6" height="6" rx="1" class="mark__on"/>
+        <rect x="17" y="9" width="6" height="6" rx="1"/>
+        <rect x="1" y="17" width="6" height="6" rx="1"/>
+        <rect x="9" y="17" width="6" height="6" rx="1"/>
+        <rect x="17" y="17" width="6" height="6" rx="1"/>
+      </svg>Bulk Media Downloader + Renamer</a>
+    <nav class="nav">
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refunds</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<h1>Collect the images off a page. Filtered, renamed, downloaded.</h1>
-<p class="lede">A Chrome extension for people who work with a lot of images: your own site's assets, licensed stock, client photo sets, research material. It gathers the images the page has loaded into your browser, then lets you filter, convert, batch-rename and export them as one organised ZIP instead of right-clicking a hundred times.</p>
+<section class="hero">
+  <div class="bar hero__inner">
+    <div class="hero__copy">
+      <h1>Collect the images off a page. Filtered, renamed, downloaded.</h1>
+      <p class="lede">A Chrome extension for people who work with a lot of images: your own site's assets, licensed stock, client photo sets, research material. It gathers the images the page has loaded into your browser, then lets you filter, convert, batch-rename and export them as one organised ZIP instead of right-clicking a hundred times.</p>
+    </div>
+    <svg class="shot" viewBox="0 0 460 320" aria-hidden="true" focusable="false">
+      <rect class="shot__win" x="0.5" y="0.5" width="459" height="319" rx="10"/>
+      <path class="shot__rule" d="M0 34.5 H460"/>
+      <circle class="shot__dot" cx="18" cy="17.5" r="4"/>
+      <circle class="shot__dot" cx="33" cy="17.5" r="4"/>
+      <circle class="shot__dot" cx="48" cy="17.5" r="4"/>
 
-<h2>Who it is for</h2>
-<ul>
-  <li>Designers and developers pulling assets off a site they own or build for.</li>
-  <li>Anyone who has bought or licensed a set of images and needs them in a usable form.</li>
-  <li>Researchers and archivists collecting openly published material.</li>
-  <li>Anyone tidying up a batch of files: consistent names, consistent format, one archive.</li>
-</ul>
+      <g class="shot__tile">
+        <rect x="16"  y="50"  width="98" height="70" rx="4"/>
+        <rect x="232" y="50"  width="98" height="70" rx="4"/>
+        <rect x="124" y="130" width="98" height="70" rx="4"/>
+        <rect x="16"  y="210" width="98" height="70" rx="4"/>
+        <rect x="232" y="210" width="98" height="70" rx="4"/>
+      </g>
+      <g class="shot__pic">
+        <circle cx="38"  cy="72"  r="6"/><path d="M28 108 L52 82 L74 108 Z"/>
+        <circle cx="254" cy="72"  r="6"/><path d="M244 108 L268 82 L290 108 Z"/>
+        <circle cx="146" cy="152" r="6"/><path d="M136 188 L160 162 L182 188 Z"/>
+        <circle cx="38"  cy="232" r="6"/><path d="M28 268 L52 242 L74 268 Z"/>
+        <circle cx="254" cy="232" r="6"/><path d="M244 268 L268 242 L290 268 Z"/>
+      </g>
 
-<h2>What it does</h2>
-<ul>
-  <li><strong>Sees the page the way your browser does.</strong> It reads the images already loaded and rendered on the page you are viewing, including ones set as CSS backgrounds or placed inside web components, which a plain right-click can miss.</li>
-  <li><strong>Filters precisely.</strong> By width, height, aspect ratio, file type and file size, so you skip icons, spacers and tracking pixels.</li>
-  <li><strong>Converts WebP.</strong> Turns WebP into PNG or JPG on your own device, so you get files your tools actually open.</li>
-  <li><strong>Batch renames.</strong> Prefix, suffix, sequence numbers with zero-padding, and an option to keep original filenames.</li>
-  <li><strong>Exports as ZIP.</strong> One organised archive instead of a hundred loose downloads.</li>
-  <li><strong>Stays on your machine.</strong> No account, no sign-in, no analytics, no server. Everything runs locally in your browser.</li>
-</ul>
+      <g class="shot__tile shot__tile--on">
+        <rect x="124" y="50"  width="98" height="70" rx="4"/>
+        <rect x="16"  y="130" width="98" height="70" rx="4"/>
+        <rect x="232" y="130" width="98" height="70" rx="4"/>
+        <rect x="124" y="210" width="98" height="70" rx="4"/>
+      </g>
+      <g class="shot__pic shot__pic--on">
+        <circle cx="146" cy="72"  r="6"/><path d="M136 108 L160 82 L182 108 Z"/>
+        <circle cx="38"  cy="152" r="6"/><path d="M28 188 L52 162 L74 188 Z"/>
+        <circle cx="254" cy="152" r="6"/><path d="M244 188 L268 162 L290 188 Z"/>
+        <circle cx="146" cy="232" r="6"/><path d="M136 268 L160 242 L182 268 Z"/>
+      </g>
+      <g class="shot__badge">
+        <circle cx="210" cy="62"  r="8"/><path d="M206.5 62 L209 64.5 L213.5 59.5"/>
+        <circle cx="102" cy="142" r="8"/><path d="M98.5 142 L101 144.5 L105.5 139.5"/>
+        <circle cx="318" cy="142" r="8"/><path d="M314.5 142 L317 144.5 L321.5 139.5"/>
+        <circle cx="210" cy="222" r="8"/><path d="M206.5 222 L209 224.5 L213.5 219.5"/>
+      </g>
 
-<div class="note">
-  <strong>What it is not.</strong> The extension only handles images your browser has already loaded on a page you have open. It does not bypass paywalls, logins or any other access control, and it does not give you rights to anything you download. You are responsible for making sure your use of an image is permitted. See the <a href="terms.html">Terms of Service</a>.
-</div>
-
-<h2>Free version</h2>
-<p>The extension is free to install and free to use. Every feature works on the free tier: scanning, filtering, previewing, renaming, WebP conversion and ZIP export. The only limit is <strong>25 image downloads per browsing session</strong>. A licence removes that limit.</p>
-
-<h2>Pricing</h2>
-
-<div class="pricing">
-  <div class="plan">
-    <h3>Lifetime</h3>
-    <div class="price">$15 <span class="per">once</span></div>
-    <p>Pay once, use forever. Unlimited downloads, no recurring charge.</p>
-    <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
-         <a class="btn" href="LIVE_URL">Buy lifetime licence</a>
-         The same URL must also go into CHECKOUT_URLS.lifetime in
-         src/lib/license.ts in the extension repo. -->
-    <span class="btn btn--pending" role="link" aria-disabled="true">Buy lifetime licence</span>
+      <rect class="shot__panel" x="344" y="50" width="100" height="230" rx="6"/>
+      <g class="shot__label">
+        <rect x="356" y="64"  width="52" height="6" rx="3"/>
+        <rect x="356" y="102" width="40" height="6" rx="3"/>
+      </g>
+      <g class="shot__field">
+        <rect x="356" y="76"  width="76" height="16" rx="3"/>
+        <rect x="356" y="114" width="76" height="16" rx="3"/>
+      </g>
+      <rect class="shot__check shot__check--on" x="356" y="142" width="11" height="11" rx="2"/>
+      <rect class="shot__check" x="356" y="162" width="11" height="11" rx="2"/>
+      <rect class="shot__check" x="356" y="182" width="11" height="11" rx="2"/>
+      <g class="shot__label">
+        <rect x="373" y="145" width="44" height="6" rx="3"/>
+        <rect x="373" y="165" width="52" height="6" rx="3"/>
+        <rect x="373" y="185" width="34" height="6" rx="3"/>
+      </g>
+      <rect class="shot__cta" x="356" y="246" width="76" height="22" rx="5"/>
+      <rect class="shot__ctabar" x="369" y="254" width="50" height="6" rx="3"/>
+    </svg>
   </div>
-  <div class="plan">
-    <h3>Monthly</h3>
-    <div class="price">$2.99 <span class="per">/ month</span></div>
-    <p>Unlimited downloads, billed monthly, recurring until you cancel. Cancel any time.</p>
-    <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
-         <a class="btn secondary" href="LIVE_URL">Subscribe monthly</a>
-         The same URL must also go into CHECKOUT_URLS.monthly in
-         src/lib/license.ts in the extension repo. -->
-    <span class="btn secondary btn--pending" role="link" aria-disabled="true">Subscribe monthly</span>
+</section>
+
+<main>
+
+<div class="wrap">
+
+  <h2>Who it is for</h2>
+  <ul class="ticks">
+    <li>Designers and developers pulling assets off a site they own or build for.</li>
+    <li>Anyone who has bought or licensed a set of images and needs them in a usable form.</li>
+    <li>Researchers and archivists collecting openly published material.</li>
+    <li>Anyone tidying up a batch of files: consistent names, consistent format, one archive.</li>
+  </ul>
+
+  <h2>What it does</h2>
+  <ul class="features">
+    <li><strong>Sees the page the way your browser does.</strong> It reads the images already loaded and rendered on the page you are viewing, including ones set as CSS backgrounds or placed inside web components, which a plain right-click can miss.</li>
+    <li><strong>Filters precisely.</strong> By width, height, aspect ratio, file type and file size, so you skip icons, spacers and tracking pixels.</li>
+    <li><strong>Converts WebP.</strong> Turns WebP into PNG or JPG on your own device, so you get files your tools actually open.</li>
+    <li><strong>Batch renames.</strong> Prefix, suffix, sequence numbers with zero-padding, and an option to keep original filenames.</li>
+    <li><strong>Exports as ZIP.</strong> One organised archive instead of a hundred loose downloads.</li>
+    <li><strong>Stays on your machine.</strong> No account, no sign-in, no analytics, no server. Everything runs locally in your browser.</li>
+  </ul>
+
+  <div class="note">
+    <strong>What it is not.</strong> The extension only handles images your browser has already loaded on a page you have open. It does not bypass paywalls, logins or any other access control, and it does not give you rights to anything you download. You are responsible for making sure your use of an image is permitted. See the <a href="terms.html">Terms of Service</a>.
   </div>
+
+  <h2>Free version</h2>
+  <p>The extension is free to install and free to use. Every feature works on the free tier: scanning, filtering, previewing, renaming, WebP conversion and ZIP export. The only limit is <strong>25 image downloads per browsing session</strong>. A licence removes that limit.</p>
+
 </div>
 
-<!-- TODO BEFORE LAUNCH: delete this paragraph once checkout is live. -->
-<p class="fineprint"><strong>Checkout is not open yet.</strong> Payments go live once our payment provider finishes verifying the business. Until then the extension is fully usable on the free tier. Email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> and we will tell you the moment licences are available.</p>
+<section class="band">
+  <div class="wrap">
 
-<p class="fineprint">Prices in US dollars. Applicable sales tax, VAT or GST is calculated and shown at checkout. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+    <h2>Pricing</h2>
 
-<h2>How you receive it</h2>
-<p>Digital delivery, nothing is shipped. Immediately after checkout your licence key is shown on the confirmation page and emailed to the address you used at checkout.</p>
+    <div class="pricing">
+      <div class="plan">
+        <h3>Lifetime</h3>
+        <div class="price">$15 <span class="per">once</span></div>
+        <p>Pay once, use forever. Unlimited downloads, no recurring charge.</p>
+        <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
+             <a class="btn" href="LIVE_URL">Buy lifetime licence</a>
+             The same URL must also go into CHECKOUT_URLS.lifetime in
+             src/lib/license.ts in the extension repo. -->
+        <span class="btn btn--pending" role="link" aria-disabled="true">Buy lifetime licence</span>
+      </div>
+      <div class="plan">
+        <h3>Monthly</h3>
+        <div class="price">$2.99 <span class="per">/ month</span></div>
+        <p>Unlimited downloads, billed monthly, recurring until you cancel. Cancel any time.</p>
+        <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
+             <a class="btn secondary" href="LIVE_URL">Subscribe monthly</a>
+             The same URL must also go into CHECKOUT_URLS.monthly in
+             src/lib/license.ts in the extension repo. -->
+        <span class="btn secondary btn--pending" role="link" aria-disabled="true">Subscribe monthly</span>
+      </div>
+    </div>
 
-<h2>How licensing works</h2>
-<p>Open the extension, click <strong>Already purchased? Activate licence</strong>, and paste your key. Your licence is personal to you and works across your own browsers and computers. Please do not share, resell or publish your key.</p>
+    <!-- TODO BEFORE LAUNCH: delete this paragraph once checkout is live. -->
+    <p class="fineprint"><strong>Checkout is not open yet.</strong> Payments go live once our payment provider finishes verifying the business. Until then the extension is fully usable on the free tier. Email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> and we will tell you the moment licences are available.</p>
 
-<div class="note">
-  <strong>Lost your key?</strong> Email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
+    <p class="fineprint">Prices in US dollars. Applicable sales tax, VAT or GST is calculated and shown at checkout. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+
+  </div>
+</section>
+
+<div class="wrap">
+
+  <h2>How you receive it</h2>
+  <p>Digital delivery, nothing is shipped. Immediately after checkout your licence key is shown on the confirmation page and emailed to the address you used at checkout.</p>
+
+  <h2>How licensing works</h2>
+  <p>Open the extension, click <strong>Already purchased? Activate licence</strong>, and paste your key. Your licence is personal to you and works across your own browsers and computers. Please do not share, resell or publish your key.</p>
+
+  <div class="note">
+    <strong>Lost your key?</strong> Email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
+  </div>
+
+  <h2>Support</h2>
+  <p>Questions, bugs and feature requests: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>, or see the <a href="contact.html">contact page</a>. Expect a reply within two business days.</p>
+
 </div>
 
-<h2>Support</h2>
-<p>Questions, bugs and feature requests: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>, or see the <a href="contact.html">contact page</a>. Expect a reply within two business days.</p>
+</main>
 
-<footer class="site">
-  <a href="privacy.html">Privacy Policy</a>
-  <a href="terms.html">Terms of Service</a>
-  <a href="refund.html">Refund Policy</a>
-  <a href="contact.html">Contact</a>
-  <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India. Email: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
-  <p>&copy; 2026 Apoorv Verma. All rights reserved.</p>
+<footer class="sitefoot">
+  <div class="bar">
+    <nav class="footlinks">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India. Email: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+    <p class="copy">&copy; 2026 Apoorv Verma. All rights reserved.</p>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>

@@ -1,119 +1,239 @@
 /* Bulk Media Downloader + Renamer: site styles.
-   Warm paper, serif headings, hairline rules. One accent, used sparingly. */
+   Cool neutral, tight sans headings, monospace labels, near-black controls.
+   Full-bleed bands share one 820px column so every left edge aligns. */
 
 :root {
-  --paper: #fcfbf9;
-  --ink: #1b1a18;
-  --muted: #6a665f;
-  --line: #e4e0d8;
-  --line-strong: #cfc9bd;
-  --fill: #f5f2ec;
-  --accent: #8a3324;
+  --bg: #ffffff;
+  --surface: #f6f7f9;
+  --ink: #0e1116;
+  --body: #364152;
+  --muted: #5b6472;
+  --line: #e5e7eb;
+  --line-strong: #cbd2da;
+  --accent: #2457d6;
 
-  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
-  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --container: 940px;
+  --measure: 680px;
+
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
 
 [hidden] { display: none !important; }
 
-::selection { background: #f0dcd6; }
+::selection { background: #d3e0ff; }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--bg);
+  color: var(--body);
   font-family: var(--sans);
-  font-size: 17px;
-  line-height: 1.7;
+  font-size: 16.5px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-.wrap {
-  max-width: 660px;
+/* Shared grid. */
+.bar, .wrap {
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 56px 24px 88px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-/* --- Header ---------------------------------------------------------- */
+.wrap { padding-top: 48px; padding-bottom: 48px; }
 
-header.site {
+/* Prose held to a readable measure; grids and cards run full width. */
+.wrap > p,
+.wrap > ol,
+.wrap > ul:not(.features),
+.wrap > .note { max-width: var(--measure); }
+
+/* --- Top bar --------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--line);
-  margin-bottom: 44px;
-  padding-bottom: 18px;
 }
 
-header.site a.brand {
-  font-family: var(--serif);
-  font-size: 20px;
+.topbar .bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: -0.012em;
   color: var(--ink);
   text-decoration: none;
-  letter-spacing: -0.01em;
 }
 
-nav.site {
-  margin-top: 14px;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-}
+.mark { width: 17px; height: 17px; flex: none; }
 
-nav.site a {
+.mark rect { fill: none; stroke: var(--line-strong); stroke-width: 1.8; }
+
+.mark .mark__on { fill: var(--accent); stroke: var(--accent); }
+
+.nav { font-size: 13.5px; font-weight: 500; }
+
+.nav a {
   color: var(--muted);
   text-decoration: none;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
-nav.site a:hover { color: var(--accent); }
+.nav a:hover { color: var(--ink); }
+
+/* --- Hero and page heads --------------------------------------------- */
+
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.hero__copy { flex: 1 1 440px; min-width: 0; }
+
+.hero__copy .lede { max-width: 30em; margin-bottom: 0; }
+
+/* Abstract mock of the extension: a grid of found images, some selected,
+   with the filter panel and export button beside it. */
+.shot {
+  flex: 0 0 380px;
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(14, 17, 22, 0.07));
+}
+
+.shot__win { fill: #fff; stroke: var(--line-strong); }
+
+.shot__rule { stroke: var(--line); }
+
+.shot__dot { fill: #dde2e9; }
+
+.shot__tile rect { fill: #eef1f5; stroke: var(--line); }
+
+.shot__tile--on rect { fill: #e7edfc; stroke: var(--accent); stroke-width: 1.8; }
+
+.shot__pic { fill: #cdd5e0; }
+
+.shot__pic--on { fill: #a9bdec; }
+
+.shot__badge circle { fill: var(--accent); }
+
+.shot__badge path { fill: none; stroke: #fff; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+.shot__panel { fill: #fafbfc; stroke: var(--line); }
+
+.shot__label rect { fill: #dde2e9; }
+
+.shot__field rect { fill: #fff; stroke: var(--line); }
+
+.shot__check { fill: #fff; stroke: var(--line-strong); }
+
+.shot__check--on { fill: var(--accent); stroke: var(--accent); }
+
+.shot__cta { fill: var(--ink); }
+
+.shot__ctabar { fill: #fff; opacity: 0.85; }
+
+.pagehead {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+
+.pagehead .bar { padding-top: 46px; padding-bottom: 40px; }
+
+.pagehead .lede { max-width: 40em; margin-bottom: 0; font-size: 17.5px; }
 
 /* --- Type ------------------------------------------------------------ */
 
 h1 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 1.18;
-  letter-spacing: -0.015em;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.033em;
+  color: var(--ink);
   text-wrap: balance;
+  margin: 0 0 18px;
+}
+
+.pagehead h1 { font-size: 34px; letter-spacing: -0.028em; margin-bottom: 10px; }
+
+h2 {
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.016em;
+  color: var(--ink);
+  margin: 46px 0 14px;
+  scroll-margin-top: 80px;
+}
+
+/* Short accent rule above each section heading, for vertical rhythm. */
+h2::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+  margin-bottom: 16px;
+}
+
+.wrap > h2:first-child, .band h2 { margin-top: 0; }
+
+h3 {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
   margin: 0 0 14px;
 }
 
-h2 {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 23px;
-  letter-spacing: -0.01em;
-  margin: 44px 0 12px;
-}
-
-h3 {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 18px;
-  margin: 0 0 6px;
-}
-
-strong { font-weight: 600; }
+strong { font-weight: 600; color: var(--ink); }
 
 .lede {
   font-size: 19px;
-  line-height: 1.6;
+  line-height: 1.55;
   color: var(--muted);
   margin-top: 0;
 }
 
 .updated {
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.05em;
-  font-size: 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: var(--muted);
-  margin: -4px 0 34px;
+  margin: 0;
 }
 
-.fineprint { font-size: 15px; color: var(--muted); margin-top: 18px; }
+.fineprint { font-size: 14.5px; color: var(--muted); margin-top: 18px; }
 
 a {
   color: var(--accent);
@@ -127,97 +247,190 @@ li { margin-bottom: 8px; }
 
 li::marker { color: var(--line-strong); }
 
+/* Numbered steps and clauses read better with a deliberate numeral. */
+ol > li::marker {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+}
+
+h1 { scroll-margin-top: 80px; }
+
 code {
   font-family: var(--mono);
-  font-size: 15px;
-  background: var(--fill);
+  font-size: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
   padding: 1px 5px;
-  border-radius: 2px;
+  border-radius: 4px;
+}
+
+/* --- Tick list ------------------------------------------------------- */
+
+.ticks { list-style: none; padding-left: 0; }
+
+.ticks li { position: relative; padding-left: 24px; }
+
+.ticks li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(43deg);
+}
+
+/* --- Feature grid ---------------------------------------------------- */
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.features li {
+  background: var(--bg);
+  padding: 22px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  transition: background 0.15s ease;
+}
+
+.features li:hover { background: #fbfcfd; }
+
+.features li strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+/* --- Tinted band (pricing) ------------------------------------------- */
+
+.band {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 /* --- Pricing --------------------------------------------------------- */
 
 .pricing {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
-  flex-wrap: wrap;
-  margin: 28px 0 8px;
+  margin: 26px 0 0;
 }
 
 .plan {
-  flex: 1 1 250px;
+  background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 3px;
-  padding: 22px 22px 24px;
+  border-radius: 8px;
+  padding: 24px 24px 26px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
+.plan:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 3px 12px rgba(14, 17, 22, 0.05);
+}
+
+/* The one-off licence is the headline offer, so it carries the accent edge. */
+.plan:first-child { border-top: 2px solid var(--accent); }
+
 .plan .price {
-  font-family: var(--serif);
-  font-size: 33px;
-  line-height: 1.2;
-  margin-bottom: 4px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
 }
 
 .plan .per {
-  font-family: var(--sans);
-  font-size: 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
   color: var(--muted);
 }
 
-.plan p { font-size: 16px; margin: 0; }
+.plan p { font-size: 15px; line-height: 1.55; margin: 0; }
+
+.plan .btn { display: block; text-align: center; }
 
 /* --- Buttons --------------------------------------------------------- */
 
 .btn {
   display: inline-block;
-  margin-top: 18px;
-  padding: 10px 18px;
-  background: var(--accent);
-  color: var(--paper);
-  border: 1px solid var(--accent);
-  border-radius: 3px;
+  margin-top: 20px;
+  padding: 11px 18px;
+  background: var(--ink);
+  color: #fff;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
   font-family: inherit;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-size: 14.5px;
+  font-weight: 550;
   text-decoration: none;
   cursor: pointer;
 }
 
-.btn:hover { background: #75291c; border-color: #75291c; }
+.btn:hover { background: #262d38; border-color: #262d38; }
 
 .btn.secondary {
-  background: transparent;
+  background: var(--bg);
   color: var(--ink);
   border-color: var(--line-strong);
 }
 
-.btn.secondary:hover { background: var(--fill); border-color: var(--muted); }
+.btn.secondary:hover { background: var(--surface); border-color: var(--muted); }
 
 /* Checkout not live yet: reads as a button, but visibly inert. */
 .btn--pending,
 .btn.secondary.btn--pending {
-  background: transparent;
-  color: var(--muted);
-  border: 1px dashed var(--line-strong);
+  background: #eceef2;
+  color: #8d94a1;
+  border: 1px solid #e1e4ea;
   cursor: not-allowed;
 }
 
 /* --- Callouts -------------------------------------------------------- */
 
 .note {
-  border-left: 2px solid var(--accent);
-  padding: 1px 0 1px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 18px 22px;
   margin: 28px 0;
-  font-size: 16px;
+  font-size: 15.5px;
+  line-height: 1.6;
 }
+
+.band .note { background: var(--bg); }
 
 .keybox {
   font-family: var(--mono);
-  font-size: 17px;
-  background: var(--fill);
+  font-size: 16px;
+  background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 3px;
+  border-radius: 6px;
   padding: 16px;
   word-break: break-all;
   margin: 20px 0 0;
@@ -225,31 +438,57 @@ code {
 
 /* --- Footer ---------------------------------------------------------- */
 
-footer.site {
-  border-top: 1px solid var(--line);
-  margin-top: 68px;
-  padding-top: 22px;
+.sitefoot {
+  background: var(--ink);
+  color: #9aa2af;
   font-size: 14px;
-  line-height: 1.65;
-  color: var(--muted);
+  line-height: 1.6;
 }
 
-footer.site a { color: var(--muted); margin-right: 18px; }
+.sitefoot .bar { padding-top: 36px; padding-bottom: 40px; }
 
-footer.site a:hover { color: var(--accent); }
+.footlinks { margin-bottom: 22px; }
 
-/* Links inside footer prose sit in a sentence, not in the link row. */
-footer.site p a { margin-right: 0; }
+.footlinks a {
+  color: #e8ebef;
+  text-decoration: none;
+  margin-right: 22px;
+  font-weight: 500;
+}
 
-footer.site .seller { margin-bottom: 6px; }
+.footlinks a:hover { color: #fff; text-decoration: underline; }
+
+.sitefoot p { margin: 0 0 6px; max-width: 62em; }
+
+.sitefoot a { color: #b9c4d6; }
+
+.sitefoot .seller { color: #9aa2af; }
+
+.sitefoot .copy {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: #6a727f;
+  margin-top: 14px;
+}
 
 /* --- Small screens --------------------------------------------------- */
 
+@media (max-width: 720px) {
+  .shot { display: none; }
+  .features, .pricing { grid-template-columns: 1fr; }
+  .hero__inner { padding-top: 48px; padding-bottom: 48px; }
+}
+
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  h1 { font-size: 30px; }
-  h2 { font-size: 21px; }
-  .lede { font-size: 18px; }
-  .wrap { padding: 36px 20px 64px; }
-  nav.site a { margin-right: 16px; }
+  h1 { font-size: 31px; }
+  .pagehead h1 { font-size: 27px; }
+  h2 { font-size: 19.5px; margin-top: 42px; }
+  .lede { font-size: 17.5px; }
+  .bar, .wrap { padding-left: 20px; padding-right: 20px; }
+  .wrap { padding-top: 36px; padding-bottom: 36px; }
+  .topbar .bar { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .nav a { margin-left: 0; margin-right: 18px; }
+  .brand { font-size: 15px; }
 }
