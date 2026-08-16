@@ -1,185 +1,255 @@
+/* Bulk Media Downloader + Renamer — site styles.
+   Warm paper, serif headings, hairline rules. One accent, used sparingly. */
+
 :root {
-  --ink: #1a1a1a;
-  --muted: #5c5c5c;
-  --line: #e2e2e2;
-  --accent: #0f766e;
-  --bg: #ffffff;
-  --soft: #f7f7f5;
+  --paper: #fcfbf9;
+  --ink: #1b1a18;
+  --muted: #6a665f;
+  --line: #e4e0d8;
+  --line-strong: #cfc9bd;
+  --fill: #f5f2ec;
+  --accent: #8a3324;
+
+  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
 
 [hidden] { display: none !important; }
 
+::selection { background: #f0dcd6; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
 body {
   margin: 0;
-  padding: 0;
-  background: var(--bg);
+  background: var(--paper);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--sans);
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 .wrap {
-  max-width: 720px;
+  max-width: 660px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 56px 24px 88px;
 }
+
+/* --- Header ---------------------------------------------------------- */
 
 header.site {
   border-bottom: 1px solid var(--line);
-  margin-bottom: 40px;
-  padding-bottom: 20px;
+  margin-bottom: 44px;
+  padding-bottom: 18px;
 }
 
 header.site a.brand {
-  font-weight: 650;
-  font-size: 18px;
+  font-family: var(--serif);
+  font-size: 20px;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
 }
 
 nav.site {
-  margin-top: 12px;
-  font-size: 15px;
+  margin-top: 14px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
 }
 
 nav.site a {
   color: var(--muted);
   text-decoration: none;
-  margin-right: 18px;
+  margin-right: 20px;
 }
 
-nav.site a:hover { color: var(--accent); text-decoration: underline; }
+nav.site a:hover { color: var(--accent); }
+
+/* --- Type ------------------------------------------------------------ */
 
 h1 {
-  font-size: 32px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  margin: 0 0 14px;
 }
 
 h2 {
-  font-size: 21px;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 23px;
   letter-spacing: -0.01em;
-  margin: 36px 0 10px;
+  margin: 44px 0 12px;
 }
 
-h3 { font-size: 17px; margin: 24px 0 6px; }
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0 0 6px;
+}
 
-p, li { color: var(--ink); }
+strong { font-weight: 600; }
 
-.lede { font-size: 19px; color: var(--muted); margin-top: 0; }
+.lede {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-top: 0;
+}
 
-.updated { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+.updated {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  color: var(--muted);
+  margin: -4px 0 34px;
+}
 
-a { color: var(--accent); }
+.fineprint { font-size: 15px; color: var(--muted); margin-top: 18px; }
 
-ul { padding-left: 22px; }
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
 
-li { margin-bottom: 6px; }
+ul, ol { padding-left: 20px; }
+
+li { margin-bottom: 8px; }
+
+li::marker { color: var(--line-strong); }
+
+code {
+  font-family: var(--mono);
+  font-size: 15px;
+  background: var(--fill);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+/* --- Pricing --------------------------------------------------------- */
 
 .pricing {
   display: flex;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
   margin: 28px 0 8px;
 }
 
 .plan {
-  flex: 1 1 260px;
+  flex: 1 1 250px;
   border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 22px;
-  background: var(--soft);
+  border-radius: 3px;
+  padding: 22px 22px 24px;
 }
 
-.plan .price { font-size: 30px; font-weight: 650; letter-spacing: -0.02em; }
+.plan .price {
+  font-family: var(--serif);
+  font-size: 33px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
 
-.plan .per { font-size: 15px; color: var(--muted); font-weight: 400; }
+.plan .per {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--muted);
+}
 
-.plan h3 { margin-top: 0; }
+.plan p { font-size: 16px; margin: 0; }
+
+/* --- Buttons --------------------------------------------------------- */
 
 .btn {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: 18px;
   padding: 10px 18px;
   background: var(--accent);
-  color: #fff;
-  border-radius: 7px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 550;
-  border: none;
-  cursor: pointer;
+  color: var(--paper);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
   font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.btn:hover { opacity: 0.9; }
+.btn:hover { background: #75291c; border-color: #75291c; }
 
-.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+.btn.secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
 
-/* Checkout not yet live: reads as a button, but is visibly inert rather than
-   being a link the visitor can follow to a 404. Remove with the spans. */
-.btn--pending {
-  background: var(--soft);
+.btn.secondary:hover { background: var(--fill); border-color: var(--muted); }
+
+/* Checkout not live yet: reads as a button, but visibly inert. */
+.btn--pending,
+.btn.secondary.btn--pending {
+  background: transparent;
   color: var(--muted);
-  border: 1px dashed var(--line);
+  border: 1px dashed var(--line-strong);
   cursor: not-allowed;
 }
 
-.btn--pending:hover { opacity: 1; }
+/* --- Callouts -------------------------------------------------------- */
 
 .note {
-  background: var(--soft);
-  border-left: 3px solid var(--accent);
-  padding: 14px 18px;
-  border-radius: 0 7px 7px 0;
-  margin: 24px 0;
+  border-left: 2px solid var(--accent);
+  padding: 1px 0 1px 20px;
+  margin: 28px 0;
   font-size: 16px;
 }
 
-code {
-  background: var(--soft);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 15px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+.keybox {
+  font-family: var(--mono);
+  font-size: 17px;
+  background: var(--fill);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 16px;
+  word-break: break-all;
+  margin: 20px 0 0;
 }
+
+/* --- Footer ---------------------------------------------------------- */
 
 footer.site {
   border-top: 1px solid var(--line);
-  margin-top: 56px;
-  padding-top: 20px;
-  font-size: 15px;
+  margin-top: 68px;
+  padding-top: 22px;
+  font-size: 14px;
+  line-height: 1.65;
   color: var(--muted);
 }
 
-footer.site a { color: var(--muted); margin-right: 16px; }
+footer.site a { color: var(--muted); margin-right: 18px; }
+
+footer.site a:hover { color: var(--accent); }
 
 /* Links inside footer prose sit in a sentence, not in the link row. */
 footer.site p a { margin-right: 0; }
 
-footer.site .seller { margin-bottom: 8px; }
+footer.site .seller { margin-bottom: 6px; }
 
-.fineprint { font-size: 15px; color: var(--muted); margin-top: 18px; }
-
-.keybox {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 18px;
-  background: var(--soft);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 16px;
-  word-break: break-all;
-  margin: 16px 0;
-}
+/* --- Small screens --------------------------------------------------- */
 
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  h1 { font-size: 27px; }
-  .wrap { padding: 32px 18px 64px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 21px; }
+  .lede { font-size: 18px; }
+  .wrap { padding: 36px 20px 64px; }
+  nav.site a { margin-right: 16px; }
 }
