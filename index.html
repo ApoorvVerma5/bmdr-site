@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk Media Downloader + Renamer</title>
+<meta name="description" content="Collect, filter, convert, rename and download the images on a page you are viewing. A fully local Chrome extension. No account, no server, no tracking.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="brand" href="./">Bulk Media Downloader + Renamer</a>
+  <nav class="site">
+    <a href="./">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refunds</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<h1>Collect the images off a page. Filtered, renamed, downloaded.</h1>
+<p class="lede">A Chrome extension for people who work with a lot of images — your own site's assets, licensed stock, client photo sets, research material. It gathers the images the page has loaded into your browser, then lets you filter, convert, batch-rename and export them as one organised ZIP instead of right-clicking a hundred times.</p>
+
+<h2>Who it is for</h2>
+<ul>
+  <li>Designers and developers pulling assets off a site they own or build for.</li>
+  <li>Anyone who has bought or licensed a set of images and needs them in a usable form.</li>
+  <li>Researchers and archivists collecting openly published material.</li>
+  <li>Anyone tidying up a batch of files: consistent names, consistent format, one archive.</li>
+</ul>
+
+<h2>What it does</h2>
+<ul>
+  <li><strong>Sees the page the way your browser does.</strong> It reads the images already loaded and rendered on the page you are viewing — including ones set as CSS backgrounds or placed inside web components, which a plain right-click can miss.</li>
+  <li><strong>Filters precisely.</strong> By width, height, aspect ratio, file type and file size — so you skip icons, spacers and tracking pixels.</li>
+  <li><strong>Converts WebP.</strong> Turns WebP into PNG or JPG on your own device, so you get files your tools actually open.</li>
+  <li><strong>Batch renames.</strong> Prefix, suffix, sequence numbers with zero-padding, and an option to keep original filenames.</li>
+  <li><strong>Exports as ZIP.</strong> One organised archive instead of a hundred loose downloads.</li>
+  <li><strong>Stays on your machine.</strong> No account, no sign-in, no analytics, no server. Everything runs locally in your browser.</li>
+</ul>
+
+<div class="note">
+  <strong>What it is not.</strong> The extension only handles images your browser has already loaded on a page you have open. It does not bypass paywalls, logins or any other access control, and it does not give you rights to anything you download. You are responsible for making sure your use of an image is permitted — see the <a href="terms.html">Terms of Service</a>.
+</div>
+
+<h2>Free version</h2>
+<p>The extension is free to install and free to use. Every feature works on the free tier — scanning, filtering, previewing, renaming, WebP conversion and ZIP export — with one limit: <strong>25 image downloads per browsing session</strong>. A licence removes that limit.</p>
+
+<h2>Pricing</h2>
+
+<div class="pricing">
+  <div class="plan">
+    <h3>Lifetime</h3>
+    <div class="price">$15 <span class="per">once</span></div>
+    <p>Pay once, use forever. Unlimited downloads, no recurring charge.</p>
+    <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
+         <a class="btn" href="LIVE_URL">Buy lifetime licence</a>
+         The same URL must also go into CHECKOUT_URLS.lifetime in
+         src/lib/license.ts in the extension repo. -->
+    <span class="btn btn--pending" role="link" aria-disabled="true">Buy lifetime licence</span>
+  </div>
+  <div class="plan">
+    <h3>Monthly</h3>
+    <div class="price">$2.99 <span class="per">/ month</span></div>
+    <p>Unlimited downloads, billed monthly, recurring until you cancel. Cancel any time.</p>
+    <!-- TODO BEFORE LAUNCH: swap this span for the live Dodo checkout link:
+         <a class="btn secondary" href="LIVE_URL">Subscribe monthly</a>
+         The same URL must also go into CHECKOUT_URLS.monthly in
+         src/lib/license.ts in the extension repo. -->
+    <span class="btn secondary btn--pending" role="link" aria-disabled="true">Subscribe monthly</span>
+  </div>
+</div>
+
+<!-- TODO BEFORE LAUNCH: delete this paragraph once checkout is live. -->
+<p class="fineprint"><strong>Checkout is not open yet.</strong> Payments go live once our payment provider finishes verifying the business. Until then the extension is fully usable on the free tier — email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> and we will tell you the moment licences are available.</p>
+
+<p class="fineprint">Prices in US dollars. Applicable sales tax, VAT or GST is calculated and shown at checkout. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+
+<h2>How you receive it</h2>
+<p>Digital delivery, nothing is shipped. Immediately after checkout your licence key is shown on the confirmation page and emailed to the address you used at checkout.</p>
+
+<h2>How licensing works</h2>
+<p>Open the extension, click <strong>Already purchased? Activate licence</strong>, and paste your key. Your licence is personal to you and works across your own browsers and computers. Please do not share, resell or publish your key.</p>
+
+<div class="note">
+  <strong>Lost your key?</strong> Email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
+</div>
+
+<h2>Support</h2>
+<p>Questions, bugs and feature requests: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>, or see the <a href="contact.html">contact page</a>. Expect a reply within two business days.</p>
+
+<footer class="site">
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="refund.html">Refund Policy</a>
+  <a href="contact.html">Contact</a>
+  <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India — <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+  <p>&copy; 2026 Apoorv Verma. All rights reserved.</p>
+</footer>
+
+</div>
+</body>
+</html>

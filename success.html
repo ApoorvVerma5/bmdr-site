@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you — Bulk Media Downloader + Renamer</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+<header class="site">
+  <a class="brand" href="./">Bulk Media Downloader + Renamer</a>
+</header>
+
+<h1 id="heading">Thank you for your purchase</h1>
+<p class="lede" id="lede">Your licence key is below. A copy has also been emailed to you.</p>
+
+<div id="keys"></div>
+
+<section id="activate">
+  <h2>How to activate</h2>
+  <ol>
+    <li>Open the Bulk Media Downloader extension in Chrome.</li>
+    <li>Click <strong>Already purchased? Activate licence</strong>.</li>
+    <li>Paste your key and confirm.</li>
+  </ol>
+
+  <div class="note">
+    Keep this key somewhere safe. If you lose it, email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
+  </div>
+</section>
+
+<div class="note" id="failure" hidden>
+  Nothing has been charged. If you meant to complete the purchase, head back to the <a href="./">pricing section</a> and try again. If you were charged anyway, email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> and we will sort it out.
+</div>
+
+<p><a class="btn secondary" href="./">Back to the homepage</a></p>
+
+<footer class="site">
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="refund.html">Refund Policy</a>
+  <a href="contact.html">Contact</a>
+  <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India — <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+  <p>&copy; 2026 Apoorv Verma. All rights reserved.</p>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+
+  // Dodo appends `status` to the return URL: `succeeded` for a one-time payment,
+  // `active` for a subscription. Anything else — failed, cancelled, still
+  // processing — also lands here, so a missing key is not the only failure mode.
+  var status = (params.get('status') || '').toLowerCase();
+  var raw = params.get('license_key');
+
+  var heading = document.getElementById('heading');
+  var lede = document.getElementById('lede');
+  var container = document.getElementById('keys');
+  var activate = document.getElementById('activate');
+  var failure = document.getElementById('failure');
+
+  var SUCCESS = ['succeeded', 'active'];
+  var PENDING = ['processing', 'pending', 'requires_customer_action'];
+
+  function abandon(title, message) {
+    heading.textContent = title;
+    lede.textContent = message;
+    activate.hidden = true;
+    failure.hidden = false;
+  }
+
+  if (status !== '' && SUCCESS.indexOf(status) === -1) {
+    if (PENDING.indexOf(status) !== -1) {
+      heading.textContent = 'Your payment is still processing';
+      lede.textContent =
+        'Your bank has not confirmed the payment yet. As soon as it clears, your licence key ' +
+        'is emailed to the address you used at checkout. No action is needed from you.';
+      activate.hidden = true;
+      return;
+    }
+    abandon(
+      'Your purchase was not completed',
+      'The payment did not go through, so no licence key was issued.'
+    );
+    return;
+  }
+
+  if (!raw) {
+    lede.textContent =
+      'Your purchase is complete. Your licence key has been emailed to you.';
+    return;
+  }
+
+  // Quantity > 1 yields several keys, comma-separated.
+  raw.split(',').forEach(function (key) {
+    key = key.trim();
+    if (!key) return;
+
+    var box = document.createElement('div');
+    box.className = 'keybox';
+    box.textContent = key;
+    container.appendChild(box);
+
+    var btn = document.createElement('button');
+    btn.className = 'btn';
+    btn.textContent = 'Copy key';
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(key).then(function () {
+        btn.textContent = 'Copied';
+        setTimeout(function () { btn.textContent = 'Copy key'; }, 2000);
+      }).catch(function () {
+        btn.textContent = 'Press Ctrl+C to copy';
+      });
+    });
+    container.appendChild(btn);
+  });
+})();
+</script>
+
+</body>
+</html>
