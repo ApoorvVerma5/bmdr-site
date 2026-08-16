@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thank you — Bulk Media Downloader + Renamer</title>
+<title>Thank you | Bulk Media Downloader + Renamer</title>
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -43,7 +43,7 @@
   <a href="terms.html">Terms of Service</a>
   <a href="refund.html">Refund Policy</a>
   <a href="contact.html">Contact</a>
-  <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India — <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
+  <p class="seller">Sold by Apoorv Verma, Jaipur, Rajasthan, India. Email: <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a>. Payments are processed by Dodo Payments, our authorised reseller and Merchant of Record.</p>
   <p>&copy; 2026 Apoorv Verma. All rights reserved.</p>
 </footer>
 
@@ -54,8 +54,8 @@
   var params = new URLSearchParams(window.location.search);
 
   // Dodo appends `status` to the return URL: `succeeded` for a one-time payment,
-  // `active` for a subscription. Anything else — failed, cancelled, still
-  // processing — also lands here, so a missing key is not the only failure mode.
+  // `active` for a subscription. Anything else (failed, cancelled, still
+  // processing) also lands here, so a missing key is not the only failure mode.
   var status = (params.get('status') || '').toLowerCase();
   var raw = params.get('license_key');
 
