@@ -401,15 +401,6 @@ code {
 
 .btn.secondary:hover { background: var(--surface); border-color: var(--muted); }
 
-/* Checkout not live yet: reads as a button, but visibly inert. */
-.btn--pending,
-.btn.secondary.btn--pending {
-  background: #eceef2;
-  color: #8d94a1;
-  border: 1px solid #e1e4ea;
-  cursor: not-allowed;
-}
-
 /* --- Callouts -------------------------------------------------------- */
 
 .note {
