@@ -29,24 +29,27 @@
 <section class="pagehead">
   <div class="bar">
     <h1 id="heading">Thank you for your purchase</h1>
-    <p class="lede" id="lede">Your licence key is below. A copy has also been emailed to you.</p>
+    <p class="lede" id="lede">Your licence key has been emailed to you.</p>
   </div>
 </section>
 
 <main class="wrap">
 
-<div id="keys"></div>
-
 <section id="activate">
   <h2>How to activate</h2>
   <ol>
+    <li>Check your inbox for the email from Dodo Payments containing your licence key. If it has not arrived within a few minutes, look in your spam folder.</li>
     <li>Open the Bulk Media Downloader extension in Chrome.</li>
-    <li>Click <strong>Already purchased? Activate licence</strong>.</li>
-    <li>Paste your key and confirm.</li>
+    <li>Click <strong>Licence</strong> at the top of the panel.</li>
+    <li>Paste your key and press <strong>Activate</strong>.</li>
   </ol>
 
   <div class="note">
-    Keep this key somewhere safe. If you lose it, email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
+    Your licence covers up to three of your own browsers or computers. To move it to a different machine, open the extension on the one you no longer use and choose <strong>Deactivate this device</strong>.
+  </div>
+
+  <div class="note">
+    Keep the email somewhere safe. If you lose your key, email <a href="mailto:ryan.apoorv123@gmail.com">ryan.apoorv123@gmail.com</a> from the address you used at checkout and we will resend it.
   </div>
 </section>
 
@@ -83,9 +86,16 @@
 
   var heading = document.getElementById('heading');
   var lede = document.getElementById('lede');
-  var container = document.getElementById('keys');
   var activate = document.getElementById('activate');
   var failure = document.getElementById('failure');
+
+  // The licence key arrives in this URL whether or not the page displays it. It is
+  // deliberately not shown, so remove it from the address bar and from the history
+  // entry once the status has been read. Do not add analytics to this page: anything
+  // that records page URLs would capture the key before this runs.
+  if (window.location.search) {
+    window.history.replaceState(null, '', window.location.pathname);
+  }
 
   var SUCCESS = ['succeeded', 'active'];
   var PENDING = ['processing', 'pending', 'requires_customer_action'];
@@ -113,35 +123,18 @@
     return;
   }
 
-  if (!raw) {
+  // Quantity greater than one yields several keys, comma-separated. The count is
+  // worth stating so a team buyer knows how many to expect in the email.
+  var count = raw ? raw.split(',').filter(function (k) { return k.trim() !== ''; }).length : 0;
+
+  if (count > 1) {
+    lede.textContent =
+      'Your purchase is complete. ' + count + ' licence keys have been emailed to you, ' +
+      'one for each seat.';
+  } else {
     lede.textContent =
       'Your purchase is complete. Your licence key has been emailed to you.';
-    return;
   }
-
-  // Quantity > 1 yields several keys, comma-separated.
-  raw.split(',').forEach(function (key) {
-    key = key.trim();
-    if (!key) return;
-
-    var box = document.createElement('div');
-    box.className = 'keybox';
-    box.textContent = key;
-    container.appendChild(box);
-
-    var btn = document.createElement('button');
-    btn.className = 'btn';
-    btn.textContent = 'Copy key';
-    btn.addEventListener('click', function () {
-      navigator.clipboard.writeText(key).then(function () {
-        btn.textContent = 'Copied';
-        setTimeout(function () { btn.textContent = 'Copy key'; }, 2000);
-      }).catch(function () {
-        btn.textContent = 'Press Ctrl+C to copy';
-      });
-    });
-    container.appendChild(btn);
-  });
 })();
 </script>
 

@@ -35,7 +35,7 @@
 <section class="pagehead">
   <div class="bar">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 16 August 2026</p>
+    <p class="updated">Last updated: 20 August 2026</p>
   </div>
 </section>
 
@@ -50,17 +50,20 @@
 <p>All image discovery, filtering, format conversion, renaming, previewing and ZIP creation happen entirely on your device. Images you download are written directly to your computer. No image data and no page data is sent to us or to any third party.</p>
 
 <h2>Network activity</h2>
-<p>The Extension makes network requests in exactly four situations:</p>
+<p>The Extension makes network requests in exactly five situations:</p>
 <ol>
   <li>When you export images using the ZIP or format-conversion options, the Extension downloads the image files you selected, from the web addresses found on the page you are viewing. This is how the files reach your device. Nothing is sent to us.</li>
   <li>When you download images without the ZIP or conversion options, the Extension gives the web addresses to your browser's own download manager, which fetches the files directly. The Extension never handles the file data itself, and nothing is sent to us.</li>
   <li>When you ask the Extension to measure images whose dimensions are unknown, it loads those images to read their size. These are normally served from your browser's cache.</li>
-  <li>When you activate a paid licence, the Extension sends the licence key you entered to Dodo Payments' licence-validation service, and receives a valid or invalid status in reply.</li>
+  <li>If you hold a paid licence, the Extension checks it with Dodo Payments' licence service. This happens when you activate a key, each time you open the Extension, and before a ZIP or format-conversion export. It sends only the licence key and an identifier for this device, and receives a valid or invalid status in reply. When you first activate a key it also sends a short device label, such as "Chrome on Windows", so that you can recognise your own devices in your account. If you do not hold a licence, none of these requests occur.</li>
+  <li>Only if you press <strong>Load previews</strong>, the Extension re-requests the images on the page you are viewing so that it can generate thumbnails for them. This is off by default and never happens on its own. No cookies or sign-in details are sent, the addresses are the same ones the page has already loaded from, and the thumbnails are created and kept on your device. Nothing is sent to us.</li>
 </ol>
 
-<p>In every case above, the addresses contacted are ones found on the page you are viewing, or the licence-validation service. The Extension does not contact any other address.</p>
+<p>In every case above, the addresses contacted are ones found on the page you are viewing, or Dodo Payments' licence service. The Extension does not contact any other address.</p>
 
-<p>Scanning a page, filtering, previewing and renaming make no network requests at all. Opening the Extension does not contact the network.</p>
+<p>Scanning a page, filtering and renaming make no network requests at all. Opening the Extension does not contact the network.</p>
+
+<p>Thumbnails are generated from images your browser has already decoded. Where that is not possible, the Extension shows a plain placeholder tile instead, unless you explicitly press <strong>Load previews</strong>.</p>
 
 <p>We operate no server. No data about you, your browsing, or the pages you visit is transmitted anywhere at any time.</p>
 
@@ -72,15 +75,15 @@
 <ul>
   <li><strong>activeTab</strong> and <strong>scripting</strong>: to read the images on the page you are actively viewing, only when you click the Extension.</li>
   <li><strong>downloads</strong>: to save the images and ZIP archives you select to your device.</li>
-  <li><strong>storage</strong>: to store your preferences and licence activation state on your own device.</li>
-  <li><strong>offscreen</strong>: to perform image format conversion in a hidden document, since the Extension's background process has no display of its own.</li>
+  <li><strong>storage</strong>: to store your licence key and your free daily download count on your own device. Whether the licence is currently valid is not stored; it is checked with Dodo Payments each time.</li>
+  <li><strong>offscreen</strong>: to perform image format conversion and ZIP creation in a hidden document, since the Extension's background process has no display of its own.</li>
   <li>Access to the licence-validation service, solely to check a licence key you enter.</li>
 </ul>
 <p>Access to other websites is requested only at the moment you export images from them, and only for the specific sites your selected images come from. The Extension does not use remotely hosted code.</p>
 
 <h2>Data retention</h2>
-<p>Your preferences and licence activation state are stored locally in your browser. Your licence key never leaves your device except as described in situation 4 above.</p>
-<p>A count of how many images you have exported in the current browsing session is also kept, solely to apply the free-tier limit. It is cleared when you close your browser and is never written to disk.</p>
+<p>If you purchase a licence, your licence key and an identifier for this device are stored locally in your browser, together with the last four characters of the key and your plan name so that the Extension can show you which licence is active. Whether the licence is currently valid is not stored; it is checked with Dodo Payments each time, as described in situation 4 above. Your licence key never leaves your device except in those checks.</p>
+<p>A count of how many images you have downloaded today is also kept, solely to apply the free daily limit. It is stored on your device and resets each day.</p>
 <p>The list of images found on a page exists only in memory while the Extension's window is open, and is discarded when you close it. It is never saved or transmitted.</p>
 <p>You can remove everything the Extension has stored by uninstalling it.</p>
 

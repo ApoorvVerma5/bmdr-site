@@ -425,16 +425,6 @@ code {
 
 .band .note { background: var(--bg); }
 
-.keybox {
-  font-family: var(--mono);
-  font-size: 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 16px;
-  word-break: break-all;
-  margin: 20px 0 0;
-}
 
 /* --- Footer ---------------------------------------------------------- */
 
