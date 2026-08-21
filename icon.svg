@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Bulk Media Downloader">
+  <!-- The mask is what makes the gap between the tile and the badge a real hole,
+       so the silhouette holds on a light or a dark tab strip. The geometry is
+       shared with tools/make-icons.mjs and with the extension. -->
+  <mask id="bmdr-moat">
+    <rect width="24" height="24" fill="#fff"/>
+    <circle cx="17.7" cy="17.7" r="6.05" fill="#000"/>
+  </mask>
+  <g mask="url(#bmdr-moat)">
+    <rect x="1.6" y="1.6" width="16.8" height="16.8" rx="4.4" fill="#1b3fe0"/>
+    <circle cx="6.3" cy="6.4" r="1.7" fill="#fff"/>
+    <path d="M2.9 17V13.4L7.2 8.9l3.6 3.8 2.2-2 4.1 4.3V17Z" fill="#fff"/>
+  </g>
+  <circle cx="17.7" cy="17.7" r="5.5" fill="#1b3fe0"/>
+  <rect x="16.65" y="13.9" width="2.1" height="3.5" rx=".6" fill="#fff"/>
+  <path d="M14.9 17h5.6L17.7 20.4Z" fill="#fff"/>
+</svg>

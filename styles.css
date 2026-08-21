@@ -1,4 +1,4 @@
-/* Bulk Media Downloader + Renamer: site styles.
+/* Bulk Media Downloader: site styles.
    Cool neutral, tight sans headings, monospace labels, near-black controls.
    Full-bleed bands share one 820px column so every left edge aligns. */
 
@@ -10,7 +10,7 @@
   --muted: #5b6472;
   --line: #e5e7eb;
   --line-strong: #cbd2da;
-  --accent: #2457d6;
+  --accent: #1b3fe0;
 
   --container: 940px;
   --measure: 680px;
@@ -83,11 +83,13 @@ body {
   text-decoration: none;
 }
 
-.mark { width: 17px; height: 17px; flex: none; }
+.mark { width: 22px; height: 22px; flex: none; }
 
-.mark rect { fill: none; stroke: var(--line-strong); stroke-width: 1.8; }
-
-.mark .mark__on { fill: var(--accent); stroke: var(--accent); }
+/* The moat takes the page colour, which is what lets the badge read as a bite
+   out of the tile rather than a blob sitting on top of it. */
+.mark__tile { fill: var(--accent); }
+.mark__on { fill: #ffffff; }
+.mark__moat { fill: var(--bg); }
 
 .nav { font-size: 13.5px; font-weight: 500; }
 
