@@ -68,14 +68,14 @@
   <li>When you download images without the ZIP or conversion options, the Extension gives the web addresses to your browser's own download manager, which fetches the files directly. The Extension never handles the file data itself, and nothing is sent to us.</li>
   <li>When you ask the Extension to measure images whose dimensions are unknown, it loads those images to read their size. These are normally served from your browser's cache.</li>
   <li>If you hold a paid licence, the Extension checks it with Dodo Payments' licence service. This happens when you activate a key, each time you open the Extension, and before a ZIP or format-conversion export. It sends only the licence key and an identifier for this device, and receives a valid or invalid status in reply. When you first activate a key it also sends a short device label, such as "Chrome on Windows", so that you can recognise your own devices in your account. If you do not hold a licence, none of these requests occur.</li>
-  <li>Only if you press <strong>Load previews</strong>, the Extension re-requests the images on the page you are viewing so that it can generate thumbnails for them. This is off by default and never happens on its own. No cookies or sign-in details are sent, the addresses are the same ones the page has already loaded from, and the thumbnails are created and kept on your device. Nothing is sent to us.</li>
+  <li>Only if you press <strong>Show previews</strong>, the Extension re-requests the images on the page you are viewing so that it can generate thumbnails for them. This is off by default and never happens on its own. No cookies or sign-in details are sent, the addresses are the same ones the page has already loaded from, and the thumbnails are created and kept on your device. Nothing is sent to us.</li>
 </ol>
 
 <p>In every case above, the addresses contacted are ones found on the page you are viewing, or Dodo Payments' licence service. The Extension does not contact any other address.</p>
 
 <p>Scanning a page, filtering and renaming make no network requests at all. Opening the Extension does not contact the network.</p>
 
-<p>Thumbnails are generated from images your browser has already decoded. Where that is not possible, the Extension shows a plain placeholder tile instead, unless you explicitly press <strong>Load previews</strong>.</p>
+<p>Thumbnails are generated from images your browser has already decoded. Where that is not possible, the Extension shows a plain placeholder tile instead, unless you explicitly press <strong>Show previews</strong>.</p>
 
 <p>We operate no server. No data about you, your browsing, or the pages you visit is transmitted anywhere at any time.</p>
 
