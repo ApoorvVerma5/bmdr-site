@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy | Bulk Media Downloader</title>
-<meta name="description" content="How Bulk Media Downloader handles your data: no account, no analytics, no server, and a complete list of the five times it touches the network.">
+<title>Privacy Policy | Pixcrate</title>
+<meta name="description" content="How Pixcrate handles your data: no account, no analytics, no server, and a complete list of the five times it touches the network.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="icon" href="icon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Bulk Media Downloader">
+<meta property="og:site_name" content="Pixcrate">
 <meta property="og:title" content="Privacy Policy">
 <meta property="og:description" content="No account, no analytics, no server, and a complete list of the five times the extension touches the network.">
 <meta property="og:url" content="https://apoorvverma5.github.io/bmdr-site/privacy.html">
 <meta property="og:image" content="https://apoorvverma5.github.io/bmdr-site/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The Bulk Media Downloader mark: a picture tile with a download badge.">
+<meta property="og:image:alt" content="The Pixcrate mark: a picture tile with a download badge.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -33,7 +33,7 @@
         <circle class="mark__tile" cx="17.7" cy="17.7" r="5.5"/>
         <rect class="mark__on" x="16.65" y="13.9" width="2.1" height="3.5" rx="0.6"/>
         <path class="mark__on" d="M14.9 17h5.6L17.7 20.4Z"/>
-      </svg>Bulk Media Downloader</a>
+      </svg>Pixcrate</a>
     <nav class="nav">
       <a href="./">Home</a>
       <a href="privacy.html">Privacy</a>
@@ -47,13 +47,13 @@
 <section class="pagehead">
   <div class="bar">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 20 August 2026</p>
+    <p class="updated">Last updated: 22 August 2026</p>
   </div>
 </section>
 
 <main class="wrap">
 
-<p>Bulk Media Downloader ("the Extension") is provided by Apoorv Verma, an individual seller based in Jaipur, Rajasthan, India. It is designed to be privacy-first and fully local.</p>
+<p>Pixcrate ("the Extension") is provided by Apoorv Verma, an individual seller based in Jaipur, Rajasthan, India. It is designed to be privacy-first and fully local.</p>
 
 <h2>What we collect</h2>
 <p>The Extension does not collect, store, or transmit your browsing history, the contents of pages you visit, personal information, or any analytics or telemetry.</p>
@@ -67,13 +67,13 @@
   <li>When you export images using the ZIP or format-conversion options, the Extension downloads the image files you selected, from the web addresses found on the page you are viewing. This is how the files reach your device. Nothing is sent to us.</li>
   <li>When you download images without the ZIP or conversion options, the Extension gives the web addresses to your browser's own download manager, which fetches the files directly. The Extension never handles the file data itself, and nothing is sent to us.</li>
   <li>When you ask the Extension to measure images whose dimensions are unknown, it loads those images to read their size. These are normally served from your browser's cache.</li>
-  <li>If you hold a paid licence, the Extension checks it with Dodo Payments' licence service. This happens when you activate a key, each time you open the Extension, and before a ZIP or format-conversion export. It sends only the licence key and an identifier for this device, and receives a valid or invalid status in reply. When you first activate a key it also sends a short device label, such as "Chrome on Windows", so that you can recognise your own devices in your account. If you do not hold a licence, none of these requests occur.</li>
+  <li>If you hold a paid licence, the Extension checks it with Dodo Payments' licence service. This happens when you activate a key, when you open the Extension (at most once a minute, so opening it repeatedly does not repeat the check), and before a ZIP or format-conversion export. It sends only the licence key and an identifier for this device, and receives a valid or invalid status in reply. When you first activate a key it also sends a short device label, such as "Chrome on Windows", so that you can recognise your own devices in your account. If you do not hold a licence, none of these requests occur.</li>
   <li>Only if you press <strong>Show previews</strong>, the Extension re-requests the images on the page you are viewing so that it can generate thumbnails for them. This is off by default and never happens on its own. No cookies or sign-in details are sent, the addresses are the same ones the page has already loaded from, and the thumbnails are created and kept on your device. Nothing is sent to us.</li>
 </ol>
 
 <p>In every case above, the addresses contacted are ones found on the page you are viewing, or Dodo Payments' licence service. The Extension does not contact any other address.</p>
 
-<p>Scanning a page, filtering and renaming make no network requests at all. Opening the Extension does not contact the network.</p>
+<p>Scanning a page, filtering and renaming make no network requests at all. <strong>If you do not hold a licence, opening the Extension does not contact the network at all.</strong> If you hold one, the only request is the licence check described in situation 4 above.</p>
 
 <p>Thumbnails are generated from images your browser has already decoded. Where that is not possible, the Extension shows a plain placeholder tile instead, unless you explicitly press <strong>Show previews</strong>.</p>
 
@@ -87,14 +87,14 @@
 <ul>
   <li><strong>activeTab</strong> and <strong>scripting</strong>: to read the images on the page you are actively viewing, only when you click the Extension.</li>
   <li><strong>downloads</strong>: to save the images and ZIP archives you select to your device.</li>
-  <li><strong>storage</strong>: to store your licence key and your free daily download count on your own device. Whether the licence is currently valid is not stored; it is checked with Dodo Payments each time.</li>
+  <li><strong>storage</strong>: to store your licence key and your free daily download count on your own device. Whether the licence is currently valid is never written to disk; it is checked with Dodo Payments.</li>
   <li><strong>offscreen</strong>: to perform image format conversion and ZIP creation in a hidden document, since the Extension's background process has no display of its own.</li>
   <li>Access to the licence-validation service, solely to check a licence key you enter.</li>
 </ul>
 <p>Access to other websites is requested only at the moment you export images from them, and only for the specific sites your selected images come from. The Extension does not use remotely hosted code.</p>
 
 <h2>Data retention</h2>
-<p>If you purchase a licence, your licence key and an identifier for this device are stored locally in your browser, together with the last four characters of the key and your plan name so that the Extension can show you which licence is active. Whether the licence is currently valid is not stored; it is checked with Dodo Payments each time, as described in situation 4 above. Your licence key never leaves your device except in those checks.</p>
+<p>If you purchase a licence, your licence key and an identifier for this device are stored locally in your browser, together with the last four characters of the key and your plan name so that the Extension can show you which licence is active. Whether the licence is currently valid is never written to disk; it is checked with Dodo Payments as described in situation 4 above, and the answer is held only in memory, for at most a minute, purely so that opening the window twice in a row does not repeat the check. Your licence key never leaves your device except in those checks.</p>
 <p>A count of how many images you have downloaded today is also kept, solely to apply the free daily limit. It is stored on your device and resets each day.</p>
 <p>The list of images found on a page exists only in memory while the Extension's window is open, and is discarded when you close it. It is never saved or transmitted.</p>
 <p>You can remove everything the Extension has stored by uninstalling it.</p>
